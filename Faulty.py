@@ -1,10 +1,14 @@
 import os
 
 def check_vulnerabilities():
-    btc_file = "BTC.txt"
-    found_file = "Found.txt"
+    # Get the absolute path of the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Pre-defined list of monitored/vulnerable addresses (add your specific targets here)
+    # Combine the script directory with the filenames
+    btc_file = os.path.join(script_dir, "BTC.txt")
+    found_file = os.path.join(script_dir, "Found.txt")
+    
+    # Pre-defined list of monitored/vulnerable addresses
     monitored_addresses = {
         "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa", 
         "3BMEXbNRg9biqHhJbK3FTEqZpA7RjHBEuX"
